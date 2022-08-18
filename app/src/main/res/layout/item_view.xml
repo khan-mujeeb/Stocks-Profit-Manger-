@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/one"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/RstockName"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:paddingLeft="50dp"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="Stock Name"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/RQty"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="Qty"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/one"
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:paddingLeft="50dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:text="Profit"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textColor="#209825"
+                android:id="@+id/RStockProfit"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="000"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/two"
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                android:paddingLeft="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:text="Avg Price"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/RStockAvgPrice"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/three"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:paddingLeft="50dp"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:text="Selling Price"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:id="@+id/RSellingPrice"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="0"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

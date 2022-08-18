@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#3B3B3B"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".AddStock">
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="#D8D4D4"
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/stockName"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:hint="Stock Name"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="#D8D4D4"
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/stockQty"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Quantity"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="#D8D4D4"
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/stockAvgPrice"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:inputType="numberDecimal"
+        android:hint="Avg Price"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="#D8D4D4"
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/stockSellPrice"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:inputType="numberDecimal"
+        android:hint="Sell Price"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:textColorHint="#D8D4D4"
+        android:layout_marginTop="25dp"
+        android:id="@+id/addBtn"
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</LinearLayout>
