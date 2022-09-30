@@ -25,8 +25,15 @@ class AddStock : AppCompatActivity() {
         val Avg: String = findViewById<EditText>(R.id.stockAvgPrice).text.toString()
         val Sell: String = findViewById<EditText>(R.id.stockSellPrice).text.toString()
 
+
+        val q:Int = Integer.parseInt(Qty)
+        val x:Double = Avg.toDouble()
+        val y: Double = Sell.toDouble()
+
+        var temp: Double = q*(y-x)
+        val invested: Double = q*x
         if (Name.isNotEmpty() && Qty.isNotEmpty() && Avg.isNotEmpty() && Sell.isNotEmpty()) {
-            val stock = Stock(null,Name,Qty,Avg,Sell)
+            val stock = Stock(null,Name,Qty,Avg,Sell,q,x,y,invested,temp)
             viewModel.addData(stock)
             Toast.makeText(this, "Added Successfully", Toast.LENGTH_SHORT).show()
         }else {

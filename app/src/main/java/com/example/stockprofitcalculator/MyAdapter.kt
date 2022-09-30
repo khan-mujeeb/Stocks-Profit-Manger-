@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-
-//    val stock = Stock(null,"null","null","null","null")
 var stock: List<Stock> = emptyList()
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var naame: TextView = itemView.findViewById(R.id.RstockName)
@@ -28,21 +26,10 @@ var stock: List<Stock> = emptyList()
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentStock:Stock = stock[position]
         holder.naame.text = currentStock.stockName
-        holder.qty.text = currentStock.stockQty
-        holder.avgP.text = "₹"+currentStock.avgPrice
-        holder.sellP.text = "₹"+currentStock.sellPrice
-
-        // profit calculation
-        val qty:Double = currentStock.stockQty.toDouble()
-        val avgp:Double = currentStock.avgPrice.toDouble()
-        val sp:Double = currentStock.sellPrice.toDouble()
-        val netProfit: Double = ((sp-avgp)*qty)
-
-        // Dashboard update
-        dashBoardVariable.Profit+=netProfit
-        dashBoardVariable.netInvestment+=avgp
-
-        holder.profit.text = "₹$netProfit"
+        holder.qty.text = currentStock.newstockQty.toString() + " qty"
+        holder.avgP.text = "₹"+currentStock.newavgPrice
+        holder.sellP.text = "₹"+currentStock.newsellPrice
+        holder.profit.text = "₹"+ String.format("%.2f",currentStock.profit)
     }
 
     override fun getItemCount(): Int {
@@ -51,5 +38,9 @@ var stock: List<Stock> = emptyList()
     fun setData(stock: List<Stock>) {
         this.stock = stock
         notifyDataSetChanged()
+    }
+
+    fun getStockAt(pos:Int):Stock{
+        return stock.get(pos)
     }
 }

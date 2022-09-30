@@ -3,6 +3,7 @@ package com.example.stockprofitcalculator
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -22,4 +23,13 @@ class ViewModel(application: Application): AndroidViewModel(application) {
     //stores all the values which we will get from getAll
     val readAllStock: LiveData<List<Stock>> = dao.getAll()
 
+    //function to delete data
+    fun deleteEntery(stock: Stock){
+        viewModelScope.launch {
+            respository.deleteEntry(stock)
+        }
+    }
+
+//    val totalSpent: LiveData<Int> = repository.totalSpent.asLiveData()
+//        val totalProfit:LiveData<Double> = respository.totalProfit.asLiveData()
 }
