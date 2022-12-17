@@ -1,4 +1,4 @@
-package com.example.stockprofitcalculator
+package com.example.stockprofitcalculator.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,13 +11,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.stockprofitcalculator.AppDatabase
+import com.example.stockprofitcalculator.MyAdapter
+import com.example.stockprofitcalculator.R
 import com.example.stockprofitcalculator.R.id.addNewStockBtn
-import com.example.stockprofitcalculator.R.id.pieChart
+import com.example.stockprofitcalculator.model.ViewModel
+import com.example.stockprofitcalculator.repository.Repository
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 //public var p = 1.1
@@ -51,27 +53,22 @@ class MainActivity : AppCompatActivity() {
         rc.adapter = adapter
         rc.layoutManager = LinearLayoutManager(this)
         var viewModel: ViewModel = ViewModelProvider(this).get(ViewModel::class.java)
-        viewModel.readAllStock.observe(this,{stock->adapter.setData(stock)})
+        viewModel.readAllStock.observe(this) { stock -> adapter.setData(stock) }
 
 //        val temp = viewModel.totalProfit.value
 //        println("lets try $temp")
-            // setting content of dashboard
-            // profit
+
+        // setting content of dashboard
+
+        viewModel.xyz(profit)   // profit
+        viewModel.pqr(invest)   //invested
+
+        
 
             var x:Double = 0.0
-            GlobalScope.launch {
-
-                x = respository.returnProfits()
-
-                profit.text = "₹"+String.format("%.2f", x).toString()
-            }
             var y = 0.0
-            // invested
-            GlobalScope.launch {
 
-                y = respository.returnInvested()
-                invest.text = "₹"+String.format("%.2f", y).toString()
-            }
+
             val pieProfit:Float = x.toFloat()
             val pieInvested:Float = y.toFloat()
             setupPieCHart(pieProfit,pieInvested)
@@ -96,22 +93,6 @@ class MainActivity : AppCompatActivity() {
                 viewModel.deleteEntery(stock)
 
 //                if(adapter.getItemCount()>0){
-//
-//                }
-                // updated profit
-                var x= 0.0
-                GlobalScope.launch {
-
-                    x = respository.returnProfits()
-                    profit.text = "₹"+String.format("%.2f", x).toString()
-                }
-
-                var y = 0.0
-                // invested
-                GlobalScope.launch {
-                    y = respository.returnInvested()
-                    invest.text = "₹"+String.format("%.2f", y).toString()
-                }
 
                     val pieProfit:Float = x.toFloat()
                     val pieInvested:Float = y.toFloat()
@@ -142,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         val x:Float = (pieProfit/total)*100
         val y:Float = (pieInvested/total)*100
 
-        println(" x and y = $pieProfit, $pieInvested")
+//        println(" x and y = $pieProfit, $pieInvested")
 
 
         val pieChart:com.github.mikephil.charting.charts.PieChart = findViewById(R.id.pieChart)

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#3B3B3B"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="3dp"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".AddStock">
+    tools:context=".ui.AddStock">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/money_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
     <EditText
+        android:layout_margin="8dp"
+        android:elevation="10dp"
         android:textColor="@color/black"
         android:textColorHint="#D8D4D4"
         android:background="@drawable/edit_text_bg"
@@ -20,6 +29,8 @@
         android:layout_height="50dp"/>
 
     <EditText
+        android:layout_margin="8dp"
+        android:elevation="10dp"
         android:textColor="@color/black"
         android:textColorHint="#D8D4D4"
         android:background="@drawable/edit_text_bg"
@@ -31,6 +42,8 @@
         android:layout_height="50dp"/>
 
     <EditText
+        android:layout_margin="8dp"
+        android:elevation="10dp"
         android:textColor="@color/black"
         android:textColorHint="#D8D4D4"
         android:background="@drawable/edit_text_bg"
@@ -42,6 +55,8 @@
         android:layout_height="50dp"/>
 
     <EditText
+        android:layout_margin="8dp"
+        android:elevation="10dp"
         android:textColor="@color/black"
         android:textColorHint="#D8D4D4"
         android:background="@drawable/edit_text_bg"
@@ -52,10 +67,16 @@
         android:hint="Sell Price"
         android:layout_height="50dp"/>
 
+
     <Button
+
+        android:background="@drawable/btn_bg"
+        android:layout_margin="20dp"
+        android:elevation="10dp"
         android:textColorHint="#D8D4D4"
         android:layout_marginTop="25dp"
         android:id="@+id/addBtn"
+        android:textColor="@color/black"
         android:text="Add"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>

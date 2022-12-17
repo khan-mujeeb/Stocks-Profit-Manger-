@@ -1,11 +1,13 @@
-package com.example.stockprofitcalculator
+package com.example.stockprofitcalculator.repository
 
 import androidx.lifecycle.LiveData
+import com.example.stockprofitcalculator.Stock
+import com.example.stockprofitcalculator.StockDao
 import kotlinx.coroutines.flow.Flow
 
 class Repository(private val dao: StockDao) {
 
-//    val totalProfit:Flow<Double> = dao.getTotalSpent()
+    val totalProfit:Flow<Double> = dao.getTotalSpent()
 
 
     // function to add data
@@ -14,8 +16,6 @@ class Repository(private val dao: StockDao) {
     //function to return profit
     suspend fun returnProfits():Double {
         var temp = dao.returnProfit()
-//        p = temp
-//        println("repository $temp")
         return temp
     }
 
@@ -24,6 +24,7 @@ class Repository(private val dao: StockDao) {
         var temp = dao.returnInvested()
         return temp
     }
+
 
 
     //function to delete item

@@ -18,8 +18,9 @@ interface StockDao {
     @Query("SELECT SUM(invested) FROM stock_table")
     suspend fun returnInvested(): Double
 
-//    @Query("SELECT SUM(profit) FROM stock_table")
-//    fun getTotalSpent(): Flow<Double>
+    @Query("SELECT SUM(profit) FROM stock_table")
+    fun getTotalSpent(): Flow<Double>
+
 
     @Insert
     fun insert(stock: Stock)

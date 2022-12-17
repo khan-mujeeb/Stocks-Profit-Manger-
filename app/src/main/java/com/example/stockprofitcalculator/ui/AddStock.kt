@@ -1,4 +1,4 @@
-package com.example.stockprofitcalculator
+package com.example.stockprofitcalculator.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,13 +7,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.example.stockprofitcalculator.R
+import com.example.stockprofitcalculator.Stock
+import com.example.stockprofitcalculator.model.ViewModel
 
 class AddStock : AppCompatActivity() {
 
