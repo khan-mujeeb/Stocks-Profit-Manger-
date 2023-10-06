@@ -4,81 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D3CCCC"
     android:orientation="vertical"
     android:padding="5dp"
-    android:background="#D3CCCC"
     tools:context=".ui.MainActivity">
 
 
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/white"
         android:id="@+id/Dashboard"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="8dp"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/white">
+
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_height="match_parent">
+            android:padding="8dp">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                android:layout_height="match_parent">
+                app:cardBackgroundColor="@color/white">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textAlignment="center"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Invested"
-                        android:layout_height="wrap_content"/>
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <TextView
-                        android:textColor="@color/yellow"
                         android:id="@+id/Invested"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="₹0.0"
-                        android:layout_height="wrap_content"/>
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                app:cardBackgroundColor="@color/white"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_height="match_parent">
+                app:cardBackgroundColor="@color/white">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <TextView
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:text="Total Returns"
-                        android:textSize="16sp"
-                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:textColor="@color/green"
-                        android:id="@+id/Return"
-                        android:textAlignment="center"
                         android:layout_width="match_parent"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:text="Total Returns"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/Return"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="₹0.0"
-                        android:layout_height="wrap_content"/>
+                        android:textAlignment="center"
+                        android:textColor="@color/green"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -86,94 +91,38 @@
 
     </androidx.cardview.widget.CardView>
 
-<!--    Pie Chart-->
+    <!--    Pie Chart-->
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/white"
         android:id="@+id/pie_chart"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/Dashboard"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/white">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--Ui component for our pie chart-->
-            <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/pieChart"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true" />
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@id/pieChart"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:weightSum="3">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="3dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:drawableLeft="@drawable/ic_circle"-->
-<!--                    android:drawableTint="@color/yellow"-->
-<!--                    android:gravity="center"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Apple"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/black" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="3dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:drawableLeft="@drawable/ic_circle"-->
-<!--                    android:drawableTint="@color/purple_200"-->
-<!--                    android:gravity="center"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Android"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-
-<!--                <TextView-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="3dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:drawableLeft="@drawable/ic_circle"-->
-<!--                    android:drawableTint="@color/red"-->
-<!--                    android:gravity="center"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Microsoft"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/black" />-->
-<!--            </LinearLayout>-->
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-<!--recyclerview-->
+    <!--recyclerview-->
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/stockRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/pie_chart">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_below="@id/pie_chart"></androidx.recyclerview.widget.RecyclerView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/addNewStockBtn"
         android:layout_width="70dp"
-        app:cardCornerRadius="100dp"
-        app:cardBackgroundColor="#4CAF50"
-        android:layout_alignBottom="@id/stockRecyclerView"
+        android:layout_height="70dp"
         android:layout_alignRight="@id/stockRecyclerView"
-        android:layout_height="70dp">
+        android:layout_alignBottom="@id/stockRecyclerView"
+        app:cardBackgroundColor="#4CAF50"
+        app:cardCornerRadius="100dp">
 
         <TextView
 

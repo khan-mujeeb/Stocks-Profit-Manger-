@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59634050612",
+    "project_id": "stock-profit-calculator-8f393",
+    "storage_bucket": "stock-profit-calculator-8f393.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59634050612:android:1da206e522d820e6970c61",
+        "android_client_info": {
+          "package_name": "com.example.stockprofitcalculator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAYvhOlll4h76devWzbjGFON2TdgIqY1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
